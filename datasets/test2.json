@@ -1,7 +1,6 @@
 {
   "type": "PostgreSQL",
   "managed": true,
-  "formatType": "csv",
   "checklists": {
     "checklists": []
   },
@@ -23,58 +22,26 @@
       "rules": []
     }
   },
-  "formatParams": {
-    "style": "unix",
-    "charset": "utf8",
-    "separator": "\t",
-    "quoteChar": "\"",
-    "escapeChar": "\\",
-    "dateSerializationFormat": "ISO",
-    "arrayMapFormat": "json",
-    "hiveSeparators": [
-      "\u0002",
-      "\u0003",
-      "\u0004",
-      "\u0005",
-      "\u0006",
-      "\u0007",
-      "\b"
-    ],
-    "skipRowsBeforeHeader": 0,
-    "parseHeaderRow": false,
-    "skipRowsAfterHeader": 0,
-    "probableNumberOfRecords": 0,
-    "normalizeBooleans": false,
-    "normalizeDoubles": true,
-    "readAdditionalColumnsBehavior": "INSERT_IN_DATA_WARNING",
-    "readMissingColumnsBehavior": "DISCARD_SILENT",
-    "readDataTypeMismatchBehavior": "DISCARD_WARNING",
-    "writeDataTypeMismatchBehavior": "DISCARD_WARNING",
-    "fileReadFailureBehavior": "FAIL",
-    "compress": "gz"
-  },
   "partitioning": {
     "ignoreNonMatchingFile": false,
     "considerMissingRequestedPartitionsAsEmpty": false,
     "dimensions": []
   },
   "versionTag": {
-    "versionNumber": 2,
+    "versionNumber": 1,
     "lastModifiedBy": {
       "login": "admin"
     },
-    "lastModifiedOn": 1588258529134
+    "lastModifiedOn": 1588258559418
   },
   "creationTag": {
     "versionNumber": 0,
     "lastModifiedBy": {
-      "login": "alex"
+      "login": "admin"
     },
-    "lastModifiedOn": 1492234147782
+    "lastModifiedOn": 1588258552333
   },
-  "tags": [
-    "creator:alex"
-  ],
+  "tags": [],
   "params": {
     "writeWithCopyBadDataBehavior": "NOVERIFY_ERROR",
     "connection": "dataiku",
@@ -82,7 +49,7 @@
     "mode": "table",
     "partitioningType": "custom",
     "normalizeDoubles": true,
-    "table": "${projectKey}_orders_prepared",
+    "table": "${projectKey}_test2",
     "tableCreationMode": "auto",
     "writeInsertBatchSize": 10000,
     "writeJDBCBadDataBehavior": "DISCARD_ROW",
@@ -92,32 +59,47 @@
   "schema": {
     "columns": [
       {
-        "name": "order_date",
+        "name": "customerID",
         "type": "string"
       },
       {
-        "name": "pages_visited",
+        "name": "gender",
+        "type": "string"
+      },
+      {
+        "name": "age_first_order",
         "type": "bigint"
       },
       {
-        "name": "order_id",
+        "name": "user_agent_brand",
         "type": "string"
       },
       {
-        "name": "customer_id",
-        "type": "string",
-        "meaning": "Text"
-      },
-      {
-        "name": "tshirt_category",
+        "name": "user_agent_brand_copy",
         "type": "string"
       },
       {
-        "name": "total",
+        "name": "user_agent_os",
+        "type": "string"
+      },
+      {
+        "name": "ip_address_geopoint",
+        "type": "string"
+      },
+      {
+        "name": "ip_address_country",
+        "type": "string"
+      },
+      {
+        "name": "campaign",
+        "type": "boolean"
+      },
+      {
+        "name": "pages_visited_avg",
         "type": "double"
       }
     ],
-    "userModified": true
+    "userModified": false
   },
   "metrics": {
     "probes": [
@@ -159,6 +141,10 @@
           },
           "partitionSelectionMethod": "ALL",
           "latestPartitionsN": 1,
+          "ordering": {
+            "enabled": false,
+            "rules": []
+          },
           "samplingMethod": "FULL",
           "maxRecords": -1,
           "targetRatio": 0.02,
@@ -172,14 +158,16 @@
       "impala": {
         "active": true
       },
+      "spark": {
+        "active": true,
+        "extraConf": []
+      },
       "python": {}
     },
     "displayedState": {
       "columns": [],
       "metrics": [
         "basic:COUNT_COLUMNS",
-        "basic:COUNT_FILES",
-        "basic:SIZE",
         "records:COUNT_RECORDS"
       ]
     }

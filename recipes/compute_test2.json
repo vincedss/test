@@ -1,7 +1,16 @@
 {
-  "type": "join",
+  "type": "r",
   "neverRecomputeExistingPartitions": false,
   "optionalDependencies": false,
+  "params": {
+    "envSelection": {
+      "envMode": "INHERIT"
+    },
+    "containerSelection": {
+      "containerMode": "INHERIT"
+    },
+    "skipPrerunValidate": false
+  },
   "customMeta": {
     "kv": {}
   },
@@ -11,11 +20,7 @@
     "main": {
       "items": [
         {
-          "ref": "customers_unlabeled",
-          "deps": []
-        },
-        {
-          "ref": "orders_by_customer",
+          "ref": "customers_unlabeled_prepared",
           "deps": []
         }
       ]
@@ -25,25 +30,25 @@
     "main": {
       "items": [
         {
-          "ref": "customers_unlabeled_joined",
+          "ref": "test2",
           "appendMode": false
         }
       ]
     }
   },
   "versionTag": {
-    "versionNumber": 1,
+    "versionNumber": 2,
     "lastModifiedBy": {
-      "login": "alex"
+      "login": "admin"
     },
-    "lastModifiedOn": 1492611458762
+    "lastModifiedOn": 1588258556896
   },
   "creationTag": {
     "versionNumber": 0,
     "lastModifiedBy": {
-      "login": "alex"
+      "login": "admin"
     },
-    "lastModifiedOn": 1492611436655
+    "lastModifiedOn": 1588258553655
   },
   "tags": [],
   "customFields": {},
