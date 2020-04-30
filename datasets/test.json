@@ -59,11 +59,11 @@
     "dimensions": []
   },
   "versionTag": {
-    "versionNumber": 0,
+    "versionNumber": 1,
     "lastModifiedBy": {
       "login": "admin"
     },
-    "lastModifiedOn": 1588258349278
+    "lastModifiedOn": 1588258382903
   },
   "creationTag": {
     "versionNumber": 0,
@@ -85,8 +85,49 @@
     }
   },
   "schema": {
-    "columns": [],
-    "userModified": true
+    "columns": [
+      {
+        "name": "customerID",
+        "type": "string"
+      },
+      {
+        "name": "gender",
+        "type": "string"
+      },
+      {
+        "name": "age_first_order",
+        "type": "double"
+      },
+      {
+        "name": "user_agent_brand",
+        "type": "string"
+      },
+      {
+        "name": "user_agent_brand_copy",
+        "type": "string"
+      },
+      {
+        "name": "user_agent_os",
+        "type": "string"
+      },
+      {
+        "name": "ip_address_geopoint",
+        "type": "string"
+      },
+      {
+        "name": "ip_address_country",
+        "type": "string"
+      },
+      {
+        "name": "campaign",
+        "type": "boolean"
+      },
+      {
+        "name": "pages_visited_avg",
+        "type": "double"
+      }
+    ],
+    "userModified": false
   },
   "metrics": {
     "probes": [
