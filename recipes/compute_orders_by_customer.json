@@ -6,6 +6,7 @@
     "kv": {}
   },
   "redispatchPartitioning": false,
+  "maxRunningActivities": 0,
   "inputs": {
     "main": {
       "items": [
@@ -41,6 +42,7 @@
     "lastModifiedOn": 1492290904173
   },
   "tags": [],
+  "customFields": {},
   "checklists": {
     "checklists": []
   }
